@@ -1,0 +1,1 @@
+export const BaseURL = 'https://e-bazar-ten.vercel.app/api/v1'

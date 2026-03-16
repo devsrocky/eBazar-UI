@@ -1,0 +1,201 @@
+@media (max-width: 500px) {
+    .card-per {
+        /* flex: 0 0 100%; */
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 35px;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 756px) {
+    .product-buttons button {
+        padding: 4px 5px;
+    }
+    .hero-title, .hero-subtitle {
+        width: 100%;
+    }
+    .responsive-skel{
+        height: 80vh !important;
+    }
+    .custom-tabs {
+        gap: 10px;
+    }
+    .custom-tabs .nav-link {
+        font-size: 15px;
+        padding: 5px 20px;
+    }
+    .article-card{
+        display: block;
+    }
+    .article-content ul{
+        margin-top: 15px;
+    }
+    .article-content ul {
+        margin-top: 15px;
+        margin-bottom: 0;
+    }
+    .article-card .img-zoom, .article-content{
+        width: 100%;
+    }
+    .filter-product{
+        display: flex;
+        flex-direction: column;
+    }
+    .filter {
+        width: 100% !important;
+    }
+    .listing{
+        width: 100% !important;
+    }
+    .filter-control{
+        display: block !important;
+    }
+    .filter-settings {
+        position: fixed;
+        top: 0px;
+        left: -300px;
+        width: 65%;
+        height: 100vh;
+        z-index: 1111;
+        margin: 0;
+        background: var(--bg-light);
+        padding: 20px 30px;
+        box-shadow: 15px 12px 20px rgb(0 0 0 / 7%);
+        overflow-y: scroll;
+        opacity: 0;
+        visibility: visible;
+        transition: all .3s ease-out;
+    }
+    .filter-settings-active{
+        opacity: 1;
+        visibility: visible;
+        left: -14px;
+    }
+    .filter-close-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        width: 40px;
+        height: 40px;
+        background: var(--tx-primary-hover);
+        text-align: center;
+        line-height: 40px;
+        font-size: 25px;
+        font-weight: 400;
+        color: #d2d6d9;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all .3s ease-out;
+        &:hover{
+            opacity: 0.7;
+        }
+    }
+    .feed-btn{
+        width: 50%;
+    }
+    .prof-sideMenu{
+        position: fixed;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        background: var(--bg-light);
+        border-radius: 20px 20px 0px 0px;
+        height: 50px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.08) 0px 5px 10px;
+        z-index: 111;
+
+    }
+    .list-unstyled {
+        width: 100%;
+        max-width: 540px;
+        display: flex;
+        gap: 15px;
+        margin: 0 auto;
+        padding: 5px 20px !important;
+        background: transparent !important;
+        box-shadow: 0 0 0 0 !important;
+    }
+    .prof-sideMenu ul li {
+        width: 25%;
+        margin-bottom: 0 !important;
+    }
+    .prof-sideMenu ul li a{
+        justify-content: center;
+        padding-left: 0px;
+        color: var(--down-color);
+    }
+    .prof-sideMenu ul li a span{
+        display: none;
+    }
+    .active-pro-menu{
+        background: transparent !important;
+        color: var(--tx-primary-hover) !important;
+    }
+    .personal-details-1{
+        flex-direction: column;
+        gap: 0;
+        
+    }
+    .profile-ard, .general-info, .prof-content{
+        width: 100%;
+        margin-left: 0 !important;
+    }
+    .profile-ard, .general-info{
+        margin-bottom: 20px;
+    }
+    .avatar-wrapper img {
+        width: 60%;
+        height: auto;
+    }
+    .tb-price, .total-price{
+        font-size: 12px;
+    }
+    .cart-table .prod-details a{
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .tb-quantity{
+        height: 40px;
+    }
+    .rmv-btn a{
+        margin-bottom: 7px;
+    }
+    .prod-details a{
+        position: relative;
+        top: 14px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .review-popup {
+        width: 94%;
+        height: 50%;
+        left: 50%;
+        top: 45%;
+        transform: translate(-50%, -50%) scale(1);
+        transition: all .3s ease-out;
+    }
+    .nav-icons {
+        background: var(--bg-primary);
+    }
+    .header-icons svg {
+        color: var(--bg-light);
+    }
+    .main-menu a {
+        color: var(--bg-primary);
+    }
+    .header{
+        height: 64px;
+    }
+    .main-menu-active::after {
+        width: fit-content !important;
+    }
+    .main-menu a:hover::after {
+        width: fit-content;
+    }
+    
+}
