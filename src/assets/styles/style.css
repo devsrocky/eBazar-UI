@@ -543,8 +543,7 @@ body{
 }
 .product-content p{
   font-size: 16px;
-  font-weight: 600;
-  color:var(--tx-primary-text);
+  font-weight: 500;
 }
 .product-btn-controll{
     transition: all .3s ease-out;
@@ -855,7 +854,7 @@ body{
 }
 .product-content h2{
   font-size: 30px;
-  color: var(--bg-primary);
+  color: var(--tx-primary-text);
 }
 .product-content .review-counter span{
   margin-left: 5px;
@@ -867,7 +866,6 @@ body{
 .product-content p{
   color: var(--tx-primary-text);
   font-size: 16px;
-  font-weight: 600;
   margin-top: 5px;
 }
 .product-content h6{
@@ -1568,12 +1566,9 @@ body{
   background: #1c01104f;
   overflow-y: hidden;
   z-index: 11;
-  display: none;
   transition: all .3s ease-out;
 }
-.loader-active{
-  display: block;
-}
+
 .full-screeloader{
   position: absolute;
   top: 0;

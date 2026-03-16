@@ -66,7 +66,7 @@ const Details = () => {
                         </Col>
                         <Col lg={7} xs={12}>
                             <Col className='product-content pt-2' style={{height: 'auto'}}>
-                                <h2>{Details?.[0]['title']}</h2>
+                                <h2 className='title-text'>{Details?.[0]['title']}</h2>
                                 <Col className='review-counter d-flex align-items-center'>
                                     {
                                         Array.from({length: 5}).map((_, index) => {
@@ -77,7 +77,7 @@ const Details = () => {
                                     }
                                     <span>({Details?.[0]['star']} customer review)</span>
                                 </Col>
-                                <p>{Details?.[0]['shortDes']}</p>
+                                <p className='content-text'>{Details?.[0]['shortDes']}</p>
                                 <h6><strong>Stock:</strong> {Details?.[0]['stock'] === true ? <span>Available</span> : <strike>Unavailable</strike>}</h6>
 
                                 <div className=' pt-2 d-flex gap-2' >

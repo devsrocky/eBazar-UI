@@ -18,7 +18,7 @@ const Loader = () => {
     if(!IsLoader) return null;
 
     return (
-        <div className={`screen-blur ${IsLoader === true ? 'loader-active' : ''}`}>
+        <div className={`screen-blur`}>
             <div className='full-screeloader'>
                 <div className='loader'></div>
             </div>

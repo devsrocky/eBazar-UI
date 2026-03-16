@@ -21,7 +21,13 @@ const CartStore = create((set) => ({
         try{
             set({IsCurtSubmit: true});
             let res = await axios.post(`${BaseURL}/SaveCart`, postbody, {headers: {token}});
-            return res.data['status'] === 'success'
+            set({IsCurtSubmit: false});
+            if(res.data['status'] === 'success'){
+                return res.data['status'] === 'success'
+            }else if(res.data['status'] === 'failed'){
+                return false;
+            }
+
         }catch(err){
             Unathorized(err.status)
         }finally{

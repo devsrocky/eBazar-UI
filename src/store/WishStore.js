@@ -5,14 +5,18 @@ import { BaseURL } from '../utility/BaseURL';
 
 const WishStore = create((set) => ({
 
-
+    IsLoader: false,
     IsWishSubmit: false,
     WishSaveRequest: async (postbody, token) => {
 
         try {
             set({IsWishSubmit: true});
             let res = await axios.post(`${BaseURL}/SaveWishList`, postbody, { headers: {token}});
-            return res.data['status'] === 'success';
+            if(res.data['status'] === 'success'){
+                return res.data['status'] === 'success';
+            }else if(res.data['status'] === 'failed'){
+                return false;
+            }
         } catch (err) {
             Unathorized(err.status)
         }finally{
@@ -33,9 +37,9 @@ const WishStore = create((set) => ({
     },
 
     WishRemoveRequest: async (postbody, token) => {
-        set({IsWishSubmit: true});
+        set({IsLoader: true});
         let res = await axios.post(`${BaseURL}/RemoveWish`, postbody, {headers: {token}});
-        set({IsWishSubmit: false});
+        set({IsLoader: false});
         return res.data['status'] === 'success';
     }
 

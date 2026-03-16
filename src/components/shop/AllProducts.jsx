@@ -24,6 +24,10 @@ const AllProducts = () => {
         if(res === true){
             await CartListRequest(token);
             SuccessMSG('Product carted success!')
+        }else if(res === false){
+            sessionStorage.clear();
+            localStorage.clear();
+            window.location.href = '/login'
         }
     }
     const SaveWish = async (productId) => {
@@ -32,6 +36,10 @@ const AllProducts = () => {
         if(res === true){
             await WishListRequest(token);
             SuccessMSG("Product saved as wish!")
+        }else if(res === false){
+            sessionStorage.clear();
+            localStorage.clear();
+            window.location.href = '/login'
         }
     }
 
