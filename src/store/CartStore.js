@@ -5,6 +5,7 @@ import { BaseURL } from '../utility/BaseURL';
 
 const CartStore = create((set) => ({
 
+    IsLoader: false,
     IsCurtSubmit: false,
     CartForm: { productID: " ", color: "", qty: "", size: ""},
     CartFormChange: (name, value) => {
@@ -35,7 +36,9 @@ const CartStore = create((set) => ({
     CartPayableTotal: 0,
     CartListRequest: async (token) => {
         try {
+            set({IsLoader: true});
             let res = await axios.get(`${BaseURL}/CartList`, {headers: {token}});
+            set({IsLoader: false});
             if(res.data['status'] === 'success'){
                 set({CartList: res.data['data']});
                 set({CartCount: res.data['data'].length})
@@ -62,12 +65,16 @@ const CartStore = create((set) => ({
     },
 
     RemoveCartRequest: async (Id, token) => {
+        set({IsLoader: true});
         let res = await axios.get(`${BaseURL}/RemoveCart/${Id}`, {headers: {token}});
+        set({IsLoader: false});
         return res.data['status'] === 'success';
     },
 
     UpdateCartRequest: async (cartID, PostBody, token) =>{
+        set({IsLoader: true});
         let res = await axios.post(`${BaseURL}/UpdateCart/${cartID}`, PostBody, { headers: {token}});
+        set({IsLoader: false});
         return res.data['status'] === 'success';
     }
 

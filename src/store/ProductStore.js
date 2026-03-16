@@ -87,7 +87,9 @@ const ProductStore = create((set) => ({
     },
 
     ListByKeywordRequest: async (keyword) => {
+        set({IsLoader: true});
         let res = await axios.get(`${BaseURL}/ListByKeyword/${keyword}`);
+        set({IsLoader: false});
         if(res.data['status'] === 'success'){
             set({ProductList: res.data['data']})
         }

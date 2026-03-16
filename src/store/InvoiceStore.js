@@ -5,9 +5,12 @@ import { BaseURL } from '../utility/BaseURL';
 
 const InvoiceStore = create((set) => ({
 
+    IsLoader: false,
     CreateInvoiceRequest:  async (token) => {
         try {
-            let res = await axios.post(`${BaseURL}/CreateInvoice`, {}, {headers: {token}})
+            set({IsLoader: true});
+            let res = await axios.post(`${BaseURL}/CreateInvoice`, {}, {headers: {token}});
+            set({IsLoader: false});
             if(res.data['status'] === 'success'){
                 window.location.href = res.data['data']['GatewayPageURL']
             }
@@ -20,7 +23,9 @@ const InvoiceStore = create((set) => ({
     TotalCount: 0,
     InvoiceListRequest: async (token) => {
         try {
+            set({IsLoader: true});
             let res = await axios.get(`${BaseURL}/Invoice-order-list`, { headers: {token} });
+            set({IsLoader: false})
             set({InvoiceList: res.data['data']})
             set({TotalCount: res.data['data'].length})
         } catch (err) {
@@ -31,7 +36,9 @@ const InvoiceStore = create((set) => ({
     InvoiceDetails: null,
     InvoiceDetailsRequest: async (invoiceId, token) => {
         try{
-            let res = await axios.get(`${BaseURL}/InvoiceList/${invoiceId}`, { headers: {token} })
+            set({IsLoader: true});
+            let res = await axios.get(`${BaseURL}/InvoiceList/${invoiceId}`, { headers: {token} });
+            set({IsLoader: false});
             if(res.data['status'] === 'success'){
                 set({InvoiceDetails: res.data['data']})
             }

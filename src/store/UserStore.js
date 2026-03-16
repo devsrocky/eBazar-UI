@@ -11,6 +11,7 @@ const UserStore = create((set) => ({
 
 
 
+    IsLoader: false,
     LoginFormData: {email: '', otp: ''},
     LoginFormOnChange: (name, value) => {
         set((state) => ({
@@ -102,7 +103,9 @@ const UserStore = create((set) => ({
     },
 
     LogoutRequest: async () =>{
+        set({IsLoader: true});
         let res = await axios.get(`${BaseURL}/Logout`);
+        set({IsLoader: false});
         return res.data['status'] === 'Logout';
     }
 
