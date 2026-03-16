@@ -200,5 +200,10 @@
     .form-card{
         max-width: 90%;
     }
+    .hero-slider,
+    .hero-slider .carousel-inner,
+    .hero-slider .carousel-item {
+        height: 70vh;
+    }
     
 }

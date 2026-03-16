@@ -50,10 +50,10 @@ const LoginForm = () => {
     
 
     return (
-        <Container className='py-5 my-5'>
+        <Container>
             <Row>
-                <Col xs={12} className='d-flex justify-content-center align-items-center'>
-                    <div className='form-card bg-clr p-4 d-flex flex-column align-items-center justify-content-center'>
+                <Col xs={12} className='d-flex justify-content-center align-items-center' style={{height: '90vh'}}>
+                    <div  className='form-card bg-clr p-4 d-flex flex-column align-items-center justify-content-center'>
                         <h5>Login with OTP</h5>
                         <p className='pb-2'>A verification code will be sent to the email address you provide</p>
                         <form onSubmit={isVerifyStep ? verifyLogin : userLogin}>
