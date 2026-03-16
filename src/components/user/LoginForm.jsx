@@ -50,9 +50,9 @@ const LoginForm = () => {
     
 
     return (
-        <Container>
+        <Container className='py-5 my-5'>
             <Row>
-                <Col xs={12} className='d-flex justify-content-center align-items-center min-vh-100'>
+                <Col xs={12} className='d-flex justify-content-center align-items-center'>
                     <div className='form-card bg-clr p-4 d-flex flex-column align-items-center justify-content-center'>
                         <h5>Login with OTP</h5>
                         <p className='pb-2'>A verification code will be sent to the email address you provide</p>
@@ -64,9 +64,6 @@ const LoginForm = () => {
                                     <input type="text" value={LoginFormData.otp} onChange={(e) => {LoginFormOnChange("otp", e.target.value)}} placeholder='6 Digit Otp' />
                                 )
                             }
-                            {/* {
-                                response === true ? <input type="text" placeholder='6 Digit Otp' /> : <></>
-                            } */}
                             <br/>
                             <SubmitBtn Text={Text}>Sent OTP</SubmitBtn>
                             <br/>

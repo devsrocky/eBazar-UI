@@ -197,5 +197,8 @@
     .main-menu a:hover::after {
         width: fit-content;
     }
+    .form-card{
+        max-width: 90%;
+    }
     
 }
