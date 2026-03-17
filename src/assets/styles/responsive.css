@@ -203,7 +203,7 @@
     .hero-slider,
     .hero-slider .carousel-inner,
     .hero-slider .carousel-item {
-        height: 100vh !important;
+        height: 90vh !important;
     }
     .hero-title {
         font-size: 60px;
