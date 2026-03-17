@@ -40,7 +40,7 @@ const App = () => {
     return (
       <>
         <BrowserRouter>
-          <Loader />
+        <Loader />
          <ScrollToTopOnNavigation/>
           <Routes>
 

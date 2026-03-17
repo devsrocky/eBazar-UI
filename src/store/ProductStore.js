@@ -102,7 +102,27 @@ const ProductStore = create((set) => ({
         }else if(res.data['status'] === 'exist'){
             return res.data;
         }
+    },
+
+    ListByBrandRequest: async (Id) => {
+        set({IsLoader: true});
+        let res = await axios.get(`${BaseURL}/ListByBrand/${Id}`);
+        set({IsLoader: false});
+        if(res.data['status'] === 'success'){
+            set({ProductList: res.data['data']})
+        }
+    },
+
+    ListByCategRequest: async (Id) => {
+        set({IsLoader: true});
+        let res = await axios.get(`${BaseURL}/ListByCateg/${Id}`);
+        set({IsLoader: false});
+        if(res.data['status'] === 'success'){
+            set({ProductList: res.data['data']})
+        }
     }
+
+
 
 }))
 
