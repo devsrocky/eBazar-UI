@@ -1,7 +1,6 @@
 import {create} from 'zustand';
 import axios from 'axios';
-// import { BaseURL } from '../utility/BaseURL';
-const BaseURL = 'http://localhost:5050/api/v1'
+import { BaseURL } from '../utility/BaseURL';
 
 const ProductStore = create((set) => ({
 
